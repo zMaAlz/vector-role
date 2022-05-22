@@ -2,13 +2,13 @@
 # tasks file for vector-role
 - name: Download vector
   ansible.builtin.get_url:
-  url: "https://packages.timber.io/vector/latest/vector-{{ vector_version }}.x86_64.rpm"
-  dest: "./vector-{{ vector_version }}.x86_64.rpm"
+    url: "https://packages.timber.io/vector/latest/vector-{{ vector_version }}.x86_64.rpm"
+    dest: "./vector-{{ vector_version }}.x86_64.rpm"
 - name: Install vector
   become: true
   ansible.builtin.yum:
-  name:
-    - vector-{{ vector_version }}.x86_64.rpm
+    name:
+      - vector-{{ vector_version }}.x86_64.rpm
 - name: Create folder config vector
   become: true
   ansible.builtin.command: "mkdir /usr/conf"
