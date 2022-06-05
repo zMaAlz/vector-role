@@ -1,5 +1,7 @@
 galaxy_info:
-  author: Alexey Markov
+  role_name: vector_role
+  namespace: netology_devops_13
+  author: Alexey_Markov
   description: The role for installing Vector on CentOS OS
   company: netology (optional)
 

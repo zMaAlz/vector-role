@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+#  default_box: "centos/7"
+  provider:
+    name: libvirt
+platforms:
+  - name: instance-1
+    memory: 2048
+    cpus: 2
+    box: ${TESTBOX:-centos/7}
+    qemu_use_session: false
+  - name: instance-2
+    memory: 2048
+    cpus: 2
+    box: ${TESTBOX:-fedora/34-cloud-base}
+    qemu_use_session: false
+#  - name: instance-3
+#    memory: 2048
+#    cpus: 2
+#    box: ${TESTBOX:-centos/8}
+#    qemu_use_session: false
+#    interfaces:
+#      - network_name: private_network
+#        ip: 192.168.122.100
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

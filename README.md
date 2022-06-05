@@ -1,12 +1,12 @@
 Vector-role
 =========
 
-Роль для Ansible 2.10 и новее для установки Vector на ОС CentOS.
+Роль для Ansible 2.10 и новее для установки Vector на ОС CentOS7 или Fedora34.
 
 Requirements
 ------------
 
-Роль работает только на дистрибутиве CentOS.
+Роль работает только на дистрибутиве CentOS, Fedora. 
 В файле конфигурации vector (vector.toml) необходимо указать адрес сервера базы данных clickhouse. 
 
 Role Variables
@@ -17,7 +17,7 @@ vector_version - Версия Vector
 Dependencies
 ------------
 
-Иные зависимости не требуются. 
+Для работы автотеста необходимо установить molecule и vagrant.  
 
 Example Playbook
 ----------------

@@ -1,0 +1,15 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: true
+  tasks:
+  - name: assertion os family
+    assert:
+      that: ansible_facts['distribution'] == "CentOS" or ansible_facts['distribution'] == "Fedora"
+  - name: Test config
+    ansible.builtin.shell:
+      cmd: ping -c3 8.8.8.8
+      warn: false
+    changed_when: false
