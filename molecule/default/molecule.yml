@@ -29,3 +29,10 @@ provisioner:
   name: ansible
 verifier:
   name: ansible
+scenario:
+  sce:
+    - dependency
+    - create
+    - prepare
+    - converge
+    - destroy
