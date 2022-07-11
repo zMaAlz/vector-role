@@ -2,29 +2,14 @@
 dependency:
   name: galaxy
 driver:
-  name: vagrant
-#  default_box: "centos/7"
-  provider:
-    name: libvirt
+  name: docker
 platforms:
-  - name: instance-1
-    memory: 2048
-    cpus: 2
-    box: ${TESTBOX:-centos/7}
-    qemu_use_session: false
-  - name: instance-2
-    memory: 2048
-    cpus: 2
-    box: ${TESTBOX:-fedora/34-cloud-base}
-    qemu_use_session: false
-#  - name: instance-3
-#    memory: 2048
-#    cpus: 2
-#    box: ${TESTBOX:-centos/8}
-#    qemu_use_session: false
-#    interfaces:
-#      - network_name: private_network
-#        ip: 192.168.122.100
+  - name: c7
+    image: docker.io/pycontribs/centos:7
+    pre_build_image: true
+  - name: ub
+    image: docker.io/pycontribs/ubuntu:latest
+    pre_build_image: true
 provisioner:
   name: ansible
 verifier:
