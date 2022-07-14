@@ -8,6 +8,7 @@ Requirements
 
 Роль работает только на дистрибутиве CentOS, Fedora. 
 В файле конфигурации vector (vector.toml) необходимо указать адрес сервера базы данных clickhouse. 
+Для тестирования роли может использоваться связка molecule + tox.
 
 Role Variables
 --------------
